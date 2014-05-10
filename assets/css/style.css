@@ -59,12 +59,16 @@
   box-sizing: border-box; }
 
 body {
-  background: #FFFFFF;
+  background: white;
   margin: 0;
   padding: 0;
   font-family: 'Avenir Next W01', 'Avenir', Helvetica, Arial,  sans-serif;
   font-size: 100%;
   line-height: 1.875em; }
+  body:after {
+    content: '';
+    display: table;
+    clear: both; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 100;
@@ -91,8 +95,18 @@ p {
   margin: 1.286em 0; }
 
 a {
+  position: relative;
+  color: inherit;
   text-decoration: none;
-  transition: color ease 0.3s; }
+  line-height: 24px; }
+  a:before, a:after {
+    content: '';
+    position: absolute;
+    -webkit-transition: -webkit-transform .5s ease;
+    /* Changed here */
+    -moz-transition: -moz-transform .5s ease;
+    -o-transition: -o-transform .5s ease;
+    transition: transform .5s ease; }
 
 blockquote {
   border-left: 10px solid #9fa9b7;
@@ -193,26 +207,30 @@ code {
     .main_content_m .post_m .post_wrapper_m {
       width: 50%;
       margin: 0 auto;
-      padding: 0 0 1.5em 0;
+      padding: 0 0 .75em 0;
       border-bottom: 1px solid #e5eaeb; }
-    .main_content_m .post_m .post_wrapper_main_m {
-      padding-bottom: 3em; }
-      .main_content_m .post_m .post_wrapper_main_m a {
-        color: #369bca;
-        text-decoration: underline; }
-        .main_content_m .post_m .post_wrapper_main_m a:hover {
-          color: #505d6d; }
     .main_content_m .post_m .post_header_m {
       margin: 1.286em 0 0 0;
       font-size: 1.375em; }
-      .main_content_m .post_m .post_header_m a {
-        text-decoration: none;
-        color: #505d6d;
-        transition: color ease 0.3s;
-        font-size: 1.125em;
-        margin-bottom: 0; }
-        .main_content_m .post_m .post_header_m a:hover {
-          color: #369bca; }
+      .main_content_m .post_m .post_header_m .link_hover {
+        display: inline-block;
+        padding-bottom: .5em;
+        overflow: hidden; }
+        .main_content_m .post_m .post_header_m .link_hover:before {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: #369bca;
+          -webkit-transform: translateX(-100%);
+          -moz-transform: translateX(-100%);
+          -o-transform: translateX(-100%);
+          transform: translateX(-100%); }
+        .main_content_m .post_m .post_header_m .link_hover:hover:before {
+          -webkit-transform: translateX(0);
+          -moz-transform: translateX(0);
+          -o-transform: translateX(0);
+          transform: translateX(0); }
       .main_content_m .post_m .post_header_m .time_tags {
         font-size: 0.5em;
         letter-spacing: 4px;
