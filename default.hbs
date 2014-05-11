@@ -13,7 +13,7 @@
 				<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 				<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800' rel='stylesheet' type='text/css'>
 				<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
-		 
+
 		    {{! Responsive Meta Tags }}
 		    <meta name="HandheldFriendly" content="True" />
 		    <meta name="MobileOptimized" content="320" />
@@ -29,9 +29,10 @@
 				<script type="text/javascript" src="http://fast.fonts.net/jsapi/93750645-d153-4739-9be4-a5c0fc805407.js"></script>
 
 		    {{ghost_head}}
-		     
+
 		</head>
 		<body class="{{body_class}}">
+			{{> sprites}}
 
 			<div class="wrapper_mackenzie">
 				{{{body}}}
@@ -51,6 +52,6 @@
 	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	    }());
 	    </script>
-    
+
 		</body>
 	</html>
