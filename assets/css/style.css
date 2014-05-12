@@ -76,7 +76,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.25em;
-  line-height: 1.25em; }
+  line-height: 1.25em;
+  text-align: center;
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 1.5em; }
 
 h2 {
   font-size: 1.65em;
@@ -89,8 +92,11 @@ h2, h3, h4, h5, h6 {
   margin-top: 2em; }
 
 p, ul, li {
-  font-size: 1.1rem;
-  font-weight: 100; }
+  font-size: 1.375em;
+  line-height: 1.5;
+  font-weight: 100;
+  color: #4d4d4d;
+  margin-bottom: 1.875em; }
 
 p {
   margin: 1.286em 0; }
@@ -129,16 +135,13 @@ a {
     transition: transform .5s ease; }
 
 blockquote {
-  border-left: 10px solid #9fa9b7;
-  padding-left: 2em;
-  margin: 2em 0 2em -2.5em;
+  border-left: 1px solid #e8e8e8;
+  padding-left: 1em;
+  margin: 2em 0;
   font-style: italic;
-  font-size: 1.35em;
   line-height: 2em; }
   blockquote p {
-    font-size: 1.25em;
-    color: #9fa9b7;
-    font-weight: 300; }
+    color: #369bca; }
 
 hr {
   min-height: 1px;
@@ -185,11 +188,11 @@ code {
       width: 50%;
       max-width: 720px;
       margin: 0 auto;
-      padding: 0 0 .75em 0;
+      padding: .35em 0 .75em 0;
       border-bottom: 1px solid #e5eaeb; }
     .main_content_m .post_m .post_header_m {
       margin: 1.286em 0 0 0;
-      font-size: 1.375em; }
+      font-size: 1.5em; }
       .main_content_m .post_m .post_header_m .link_hover {
         display: inline-block;
         padding-bottom: .5em;
