@@ -66,6 +66,9 @@ p, ul, li {
   font-weight: 100;
   color: #4d4d4d;
   margin-bottom: 1.875em;
+  code {
+    font-size: 0.8em;
+  }
 }
 
 p {
@@ -137,9 +140,9 @@ hr {
 
 code {
   display: inline;
-  background: $dark;
-  padding: .25em .75em;
-  color: #C0C5CE;
+  background: #2B303B;
+  padding: .4em .75em;
+  color: #E0E2E4;
   border-radius: .25em;
 }
 

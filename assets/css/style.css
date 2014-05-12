@@ -100,6 +100,8 @@ p, ul, li {
   font-weight: 100;
   color: #4d4d4d;
   margin-bottom: 1.875em; }
+  p code, ul code, li code {
+    font-size: 0.8em; }
 
 p {
   margin: 1.286em 0; }
@@ -160,9 +162,9 @@ hr {
 
 code {
   display: inline;
-  background: #505d6d;
-  padding: .25em .75em;
-  color: #C0C5CE;
+  background: #2B303B;
+  padding: .4em .75em;
+  color: #E0E2E4;
   border-radius: .25em; }
 
 progress {
@@ -421,14 +423,10 @@ footer {
       color: #a8b0ba;
       text-decoration: underline; }
 
-/**
- * Obsidian style
- * ported by Alexander Marenin (http://github.com/ioncreature)
- */
 pre code {
   display: block;
-  padding: 2em 4em;
-  background: #6A798D;
+  padding: 2em 2.5em;
+  background: #2B303B;
   margin: 3em 0;
   overflow: scroll;
   border-radius: .25em; }
@@ -463,7 +461,7 @@ pre .xml .attribute {
   color: #B3B689; }
 
 pre .xml .tag .value {
-  color: #E8E2B7; }
+  color: #C0C5CE; }
 
 pre .code,
 pre .class .title,
@@ -479,7 +477,7 @@ pre .regexp {
 
 pre .at_rule,
 pre .at_rule .keyword {
-  color: #A082BD; }
+  color: #AB8EAD; }
 
 pre .doctype {
   color: #557182; }
@@ -512,10 +510,10 @@ pre .apache .tag,
 pre .apache .cbracket,
 pre .tex .command,
 pre .prompt {
-  color: #8CBBAD; }
+  color: #AB8EAD; }
 
 pre .string {
-  color: #FF9E3D; }
+  color: #A3BE8C; }
 
 pre .comment,
 pre .java .annotation,
@@ -528,7 +526,7 @@ pre .deletion,
 pre .shebang,
 pre .apache .sqbracket,
 pre .tex .formula {
-  color: #3e4651; }
+  color: #65737E; }
 
 pre .keyword,
 pre .literal,
