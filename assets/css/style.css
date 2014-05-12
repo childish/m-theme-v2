@@ -165,6 +165,49 @@ code {
   color: #C0C5CE;
   border-radius: .25em; }
 
+progress {
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* Dimensions */
+  width: 100%;
+  height: .2em;
+  /* Reset the apperance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+  /* For Firefox/IE10+ */
+  background-color: transparent;
+  /* For IE10+, color of the progress bar */
+  color: red; }
+
+progress::-webkit-progress-bar {
+  background-color: transparent; }
+
+.progress_bar::-webkit-progress-value {
+  background-color: #369bca; }
+
+.progress_bar::-moz-progress-bar {
+  background-color: #369bca; }
+
+.progress-container {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: .25em;
+  display: block; }
+
+.progress-bar {
+  background-color: #369bca;
+  width: 50%;
+  display: block;
+  height: inherit; }
+
 .vertical_m {
   display: table-cell;
   vertical-align: middle; }
