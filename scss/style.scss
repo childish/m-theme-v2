@@ -32,7 +32,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 100;
+  font-weight: 700;
   color: $dark;
 }
 
@@ -42,11 +42,14 @@ h1 {
   text-align: center;
   border-bottom: 1px solid #E8E8E8;
   padding-bottom: 1.5em;
+  font-weight: 100;
 }
 
 h2 {
   font-size: 1.65em;
   margin:1em 0;
+  font-weight: 100;
+  color: $blue;
 }
 
 h3 {
@@ -58,7 +61,7 @@ h2, h3, h4, h5, h6 {
 }
 
 p, ul, li {
-  font-size: 1.375em;
+  font-size: 1.375rem;
   line-height: 1.5;
   font-weight: 100;
   color: #4d4d4d;
@@ -67,6 +70,10 @@ p, ul, li {
 
 p {
   margin: 1.286em 0;
+}
+
+strong {
+  font-weight: 500;
 }
 
 .icon {
@@ -108,7 +115,9 @@ a {
 }
 
 blockquote {
-  border-left: 1px solid $lightGrayBorder;
+  border-bottom: 1px solid $lightGrayBorder;
+  border-top: 1px solid $lightGrayBorder;
+  text-align: center;
   padding-left: 1em;
   margin: 2em 0;
   font-style: italic;
