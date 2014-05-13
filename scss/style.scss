@@ -90,7 +90,7 @@ strong {
   width: 1.25em;
 }
 .icon-logo {
-  fill: #707e8c;
+  fill: rgba(112, 126, 140, 1.0);
   width: 9.5em;
   height: 3.3em;
   margin: 0 auto;
@@ -98,8 +98,8 @@ strong {
 }
 
 #icon-logo {
-  .path2 {
-    fill: $blue;
+  .path1 {
+    fill: rgba(94, 105, 112, 1.0);
   }
 }
 
