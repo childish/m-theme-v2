@@ -80,15 +80,10 @@ body {
 		padding-left: 0;
 		margin: 0 0 1em 0;
 		li {
-			padding-bottom: .5em;
 			margin-bottom: 0;
 			font-size: .75em;
 			a {
 				color: #E8E8E8;
-				transition: color .5s ease;
-				&:hover {
-					color: #6BB4D5;
-				}
 			}
 		}
 	}

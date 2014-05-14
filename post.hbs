@@ -9,22 +9,34 @@
   {{> header}}
 
 	{{#post}}
-		<article class="post_m">
-      <div class="post_title_m">
-        <h1>{{title}}</h1>
-        <p class="subtitle">
-          {{date published_at format="MMMM DD, YYYY"}}
-          in
-          {{#foreach tags}}
-            <span><a href="{{url}}">{{name}}</a></span>
-          {{/foreach}}
-        </p>
-      </div>
+		<article class="post_m animated fadeInLeft">
       <div class="post_wrapper_m post_wrapper_main_m">
+        <div class="post_title_m">
+          <h1>{{title}}</h1>
+          <p class="subtitle">
+            {{date published_at format="MMMM DD, YYYY"}}
+            in
+            {{#foreach tags}}
+              <span><a href="{{url}}">{{name}}</a></span>
+            {{/foreach}}
+          </p>
+        </div>
         {{content}}
+
+        <div id="disqus_thread"></div>
+        <div class="comment_button_m">
+          <div id="disqus_loader">
+            <a class="button" onclick='$.ajaxSetup({cache:true});$.getScript("http://mackenziechild.disqus.com/embed.js");$.ajaxSetup({cache:false});$("#disqus_loader").remove();'>Load Comments</a>
+          </div>
+        </div>
       </div>
 
-      <div class="post_wrapper_m">
+      {{!-- <div class="post_wrapper_m">
+        <a target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}">
+          <svg class="icon icon-twitter" viewBox="0 0 32 32">
+            <use xlink:href="#icon-twitter"></use>
+          </svg>
+        </a>
         <div class="author_share_m">
           {{#if author}}
             <div class="author_m">
@@ -42,18 +54,18 @@
             <a target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}"><span class="share_button_m icon-googleplus"></span></a>
           </div>
         </div>
-      </div>
+      </div> --}}
 
-      <div class="comments_m">
+ {{!--      <div class="comments_m">
         <div class="post_wrapper_m">
           <div id="disqus_thread"></div>
           <div class="comment_button_m">
             <div id="disqus_loader">
-              <a onclick='$.ajaxSetup({cache:true});$.getScript("http://mackenziechild.disqus.com/embed.js");$.ajaxSetup({cache:false});$("#disqus_loader").remove();'><p>Load Comments</p></a>
+              <a class="button" onclick='$.ajaxSetup({cache:true});$.getScript("http://mackenziechild.disqus.com/embed.js");$.ajaxSetup({cache:false});$("#disqus_loader").remove();'>Load Comments</a>
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
 
      {{!--  <div class="post_bottom_navigation_m">
         <div class="post_wrapper_m">
