@@ -446,25 +446,28 @@ progress::-webkit-progress-bar {
   width: 100%;
   display: inline-block; }
   .main_content_m .main_content_header_m {
-    /* old syntax */
     display: -webkit-box;
     display: -moz-box;
-    /* new syntax */
     display: -webkit-flex;
     display: -moz-flex;
     display: -o-flex;
     display: -ms-flex;
     display: flex;
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-    -ms-flex-pack: justify;
-    -webkit-flex-pack: justify;
-    justify-content: space-around;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -o-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -o-align-items: center;
+    align-items: center;
     padding: 1.25em 2.5em;
     margin-bottom: 4em;
     background: #6bb4d5; }
     .main_content_m .main_content_header_m .hamburger, .main_content_m .main_content_header_m .twitter {
-      padding-top: 1.1em; }
+      padding-top: .55em;
+      line-height: 0; }
   .main_content_m .post_m {
     color: #282828; }
     .main_content_m .post_m a {
