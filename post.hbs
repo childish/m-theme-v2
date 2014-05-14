@@ -12,6 +12,13 @@
 		<article class="post_m">
       <div class="post_title_m">
         <h1>{{title}}</h1>
+        <p class="subtitle">
+          {{date published_at format="MMMM DD, YYYY"}}
+          in
+          {{#foreach tags}}
+            <span><a href="{{url}}">{{name}}</a></span>
+          {{/foreach}}
+        </p>
       </div>
       <div class="post_wrapper_m post_wrapper_main_m">
         {{content}}

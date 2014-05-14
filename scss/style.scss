@@ -41,10 +41,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2.25em;
   line-height: 1.25em;
-  text-align: center;
-  border-bottom: 1px solid #E8E8E8;
-  padding-bottom: 1.5em;
-  font-weight: 100;
   color: $blue;
 }
 
@@ -279,6 +275,25 @@ progress::-webkit-progress-bar {
       color: $blue;
       text-decoration: underline;
     }
+    .post_title_m {
+      h1 {
+        font-size: 2.25em;
+        line-height: 1.25em;
+        text-align: center;
+        font-weight: 100;
+        color: #6bb4d5;
+        margin-bottom: 0;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: 0.9em;
+        color: $lightGrayText;
+        margin: 0;
+        border-bottom: 1px solid #E8E8E8;
+        padding-bottom: 3em;
+        margin-bottom: 1.5em;
+      }
+    }
     color: $dark;
     .post_wrapper_m {
       width: 50%;
@@ -319,10 +334,13 @@ progress::-webkit-progress-bar {
       .time_tags {
         color: $lightGrayText;
         font-size: 0.5em;
-        letter-spacing: 4px;
+        letter-spacing: 2px;
         margin: 0;
         padding: 0;
         line-height: 2;
+        span {
+          color: $blue;
+        }
       }
     }
   }

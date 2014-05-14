@@ -270,10 +270,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2.25em;
   line-height: 1.25em;
-  text-align: center;
-  border-bottom: 1px solid #E8E8E8;
-  padding-bottom: 1.5em;
-  font-weight: 100;
   color: #6bb4d5; }
 
 h2 {
@@ -468,6 +464,21 @@ progress::-webkit-progress-bar {
     .main_content_m .post_m a {
       color: #6bb4d5;
       text-decoration: underline; }
+    .main_content_m .post_m .post_title_m h1 {
+      font-size: 2.25em;
+      line-height: 1.25em;
+      text-align: center;
+      font-weight: 100;
+      color: #6bb4d5;
+      margin-bottom: 0; }
+    .main_content_m .post_m .post_title_m .subtitle {
+      text-align: center;
+      font-size: 0.9em;
+      color: #afb0b1;
+      margin: 0;
+      border-bottom: 1px solid #E8E8E8;
+      padding-bottom: 3em;
+      margin-bottom: 1.5em; }
     .main_content_m .post_m .post_wrapper_m {
       width: 50%;
       max-width: 720px;
@@ -502,10 +513,12 @@ progress::-webkit-progress-bar {
       .main_content_m .post_m .post_header_m .time_tags {
         color: #afb0b1;
         font-size: 0.5em;
-        letter-spacing: 4px;
+        letter-spacing: 2px;
         margin: 0;
         padding: 0;
         line-height: 2; }
+        .main_content_m .post_m .post_header_m .time_tags span {
+          color: #6bb4d5; }
   .main_content_m .author_share_m {
     display: table;
     padding: 1em 0; }

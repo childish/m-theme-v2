@@ -7,7 +7,13 @@
 			<article class="post_m">
 				<div id="drawer-navigation" class="drawer-navigation post_wrapper_m">
 					<header class="post_header_m">
-						<p class="time_tags">{{date published_at format="MMMM DD, YYYY"}}</p>
+						<p class="time_tags">
+							{{date published_at format="MMMM DD, YYYY"}}
+							in
+							{{#foreach tags}}
+								<span><a href="{{url}}">{{name}}</a></span>
+							{{/foreach}}
+						</p>
 						<a class="link_hover" href="{{{url}}}">{{title}}</a>
 					</header>
 				</div>
