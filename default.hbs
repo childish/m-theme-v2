@@ -17,7 +17,7 @@
 		    {{! Responsive Meta Tags }}
 		    <meta name="HandheldFriendly" content="True" />
 		    <meta name="MobileOptimized" content="320" />
-		    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		    {{! Scripts }}
 				<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
@@ -34,8 +34,34 @@
 		<body class="{{body_class}}">
 			{{> sprites}}
 
-			<div class="wrapper_mackenzie">
+			<div id="sb-site" class="wrapper_mackenzie">
 				{{{body}}}
+			</div>
+
+			<div class="sb-slidebar sb-left">
+				<nav>
+					<p class="title">Writing</p>
+					<ul>
+						<li><a href="/">All</a></li>
+						<li><a href="/tag/life/">Life</a></li>
+						<li><a href="/tag/design/">Design</a></li>
+						<li><a href="/tag/front-end/">Front-End</a></li>
+						<li><a href="/tag/development/">Back-End</a></li>
+					</ul>
+					<p class="title">Me</p>
+					<ul>
+						<li><a href="/about">About</a></li>
+						<li><a href="/projects">Projects</a></li>
+					</ul>
+					<p class="title">Internets</p>
+					<ul>
+						<li><a href="https://twitter.com/mackenziechild">Twitter</a></li>
+						<li><a href="https://dribbble.com/mackenzie">Dribbble</a></li>
+						<li><a href="https://github.com/childish">Github</a></li>
+						<li><a href="mailto:mackenzie.child@gmail.com">Email</a></li>
+					</ul>
+			  </nav>
+			  <p class="copyright">&copy; 2014 Mackenzie Child</p>
 			</div>
 
 			{{ghost_foot}}
@@ -52,6 +78,17 @@
 	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	    }());
 	    </script>
+
+
+			<script src="/assets/js/slidebars.min.js"></script>
+
+			<script>
+			  (function($) {
+			    $(document).ready(function() {
+			      $.slidebars();
+			    });
+			  }) (jQuery);
+			</script>
 
 		</body>
 	</html>

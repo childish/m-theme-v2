@@ -1,3 +1,196 @@
+/* -----------------------------------
+ * Slidebars
+ * Version 0.9.4
+ * http://plugins.adchsm.me/slidebars/
+ *
+ * Written by Adam Smith
+ * http://www.adchsm.me/
+ *
+ * Released under MIT License
+ * http://plugins.adchsm.me/slidebars/license.txt
+ *
+ * -------------------
+ * Slidebars CSS Index
+ *
+ * 001 - Box Model, Html & Body
+ * 002 - Site
+ * 003 - Slidebars
+ * 004 - Animation
+ * 005 - Helper Classes
+ *
+ * ----------------------------
+ * 001 - Box Model, Html & Body
+ */
+html, body, #sb-site, .sb-slidebar {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  /* Stops horizontal scrolling. */ }
+
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  position: relative; }
+
+/* ----------
+ * 002 - Site
+ */
+#sb-site {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  /* Site sits above Slidebars */
+  background-color: #ffffff;
+  /* Default background colour, overwrite this with your own css. */ }
+
+/* ---------------
+ * 003 - Slidebars
+ */
+.sb-slidebar {
+  height: 100%;
+  overflow-y: auto;
+  /* Enable vertical scrolling on Slidebars when needed. */
+  position: fixed;
+  top: 0;
+  z-index: 0;
+  /* Slidebars sit behind sb-site. */
+  visibility: hidden;
+  /* Initially hide the Slidebars. */
+  background-color: #282828;
+  /* Default Slidebars background colour, overwrite this with your own css. */
+  padding: 2em; }
+  .sb-slidebar .title {
+    margin: 0.5em 0 1em 0;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #4D4D4D; }
+  .sb-slidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 1em 0; }
+    .sb-slidebar ul li {
+      padding-bottom: .5em;
+      margin-bottom: 0;
+      font-size: .75em; }
+      .sb-slidebar ul li a {
+        color: #E8E8E8;
+        transition: color .5s ease; }
+        .sb-slidebar ul li a:hover {
+          color: #6BB4D5; }
+  .sb-slidebar .copyright {
+    font-size: .75em;
+    color: #4D4D4D; }
+
+.sb-left {
+  left: 0;
+  /* Set Slidebar to the left. */ }
+
+.sb-right {
+  right: 0;
+  /* Set Slidebar to the right. */ }
+
+html.sb-static .sb-slidebar,
+.sb-slidebar.sb-static {
+  position: absolute;
+  /* Makes Slidebars scroll naturally with the site, and unfixes them for Android Browser < 3 and iOS < 5. */ }
+
+.sb-slidebar.sb-active {
+  visibility: visible;
+  /* Makes Slidebars visibile when open. */ }
+
+.sb-slidebar.sb-style-overlay {
+  z-index: 9999;
+  /* Set z-index high to ensure it overlays any other site elements. */ }
+
+/* Slidebar widths for devices that don't support media queries. */
+.sb-slidebar {
+  width: 30%; }
+
+.sb-width-thin {
+  width: 15%; }
+
+.sb-width-wide {
+  width: 45%; }
+
+@media (max-width: 480px) {
+  /* Slidebar width on extra small screens. */
+  .sb-slidebar {
+    width: 70%; }
+
+  .sb-width-thin {
+    width: 55%; }
+
+  .sb-width-wide {
+    width: 85%; } }
+@media (min-width: 481px) {
+  /* Slidebar width on small screens. */
+  .sb-slidebar {
+    width: 55%; }
+
+  .sb-width-thin {
+    width: 40%; }
+
+  .sb-width-wide {
+    width: 70%; } }
+@media (min-width: 768px) {
+  /* Slidebar width on small screens. */
+  .sb-slidebar {
+    width: 40%; }
+
+  .sb-width-thin {
+    width: 25%; }
+
+  .sb-width-wide {
+    width: 55%; } }
+@media (min-width: 992px) {
+  /* Slidebar width on medium screens. */
+  .sb-slidebar {
+    width: 30%; }
+
+  .sb-width-thin {
+    width: 15%; }
+
+  .sb-width-wide {
+    width: 45%; } }
+@media (min-width: 1200px) {
+  /* Slidebar width on large screens. */
+  .sb-slidebar {
+    width: 20%; }
+
+  .sb-width-thin {
+    width: 5%; }
+
+  .sb-width-wide {
+    width: 35%; } }
+/* ---------------
+ * 004 - Animation
+ */
+.sb-slide, #sb-site, .sb-slidebar {
+  -webkit-transition: -webkit-transform 400ms ease;
+  -moz-transition: -moz-transform 400ms ease;
+  -o-transition: -o-transform 400ms ease;
+  transition: transform 400ms ease;
+  -webkit-transition-property: -webkit-transform, left, right;
+  /* Add left/right for Android < 4.4. */
+  -webkit-backface-visibility: hidden;
+  /* Prevents flickering. This is non essential, and you may remove it if your having problems with fixed background images in Chrome. */ }
+
+/* --------------------
+ * 005 - Helper Classes
+ */
+.sb-hide {
+  display: none;
+  /* May be applied to control classes when Slidebars is disabled over a certain width. */ }
+
 @font-face {
   font-family: 'm';
   src: url("../fonts/m.eot?vlyfq");
@@ -72,7 +265,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  color: #707e8c; }
+  color: #282828; }
 
 h1 {
   font-size: 2.25em;
@@ -80,13 +273,14 @@ h1 {
   text-align: center;
   border-bottom: 1px solid #E8E8E8;
   padding-bottom: 1.5em;
-  font-weight: 100; }
+  font-weight: 100;
+  color: #6bb4d5; }
 
 h2 {
   font-size: 1.65em;
   margin: 1em 0;
   font-weight: 100;
-  color: #369bca; }
+  color: #6bb4d5; }
 
 h3 {
   font-size: 1.375em; }
@@ -98,7 +292,7 @@ p, ul, li {
   font-size: 1.375rem;
   line-height: 1.5;
   font-weight: 100;
-  color: #4d4d4d;
+  color: #282828;
   margin-bottom: 1.875em; }
   p code, ul code, li code {
     font-size: 0.8em; }
@@ -113,20 +307,20 @@ strong {
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
-  fill: #369bca; }
+  fill: #FFF; }
 
 .icon-twitter {
   width: 1.25em; }
 
 .icon-logo {
-  fill: #707e8c;
+  fill: #408CAE;
   width: 9.5em;
   height: 3.3em;
   margin: 0 auto;
   display: block; }
 
-#icon-logo .path1 {
-  fill: #5e6970; }
+#icon-logo .path1, #icon-logo .path2 {
+  fill: #FFF; }
 
 a {
   position: relative;
@@ -185,7 +379,7 @@ blockquote {
   font-style: italic;
   line-height: 2em; }
   blockquote p {
-    color: #369bca; }
+    color: #6bb4d5; }
 
 hr {
   min-height: 1px;
@@ -224,10 +418,10 @@ progress::-webkit-progress-bar {
   background-color: transparent; }
 
 .progress_bar::-webkit-progress-value {
-  background-color: #369bca; }
+  background-color: #6bb4d5; }
 
 .progress_bar::-moz-progress-bar {
-  background-color: #369bca; }
+  background-color: #6bb4d5; }
 
 .progress-container {
   width: 100%;
@@ -239,7 +433,7 @@ progress::-webkit-progress-bar {
   display: block; }
 
 .progress-bar {
-  background-color: #369bca;
+  background-color: #6bb4d5;
   width: 50%;
   display: block;
   height: inherit; }
@@ -265,14 +459,14 @@ progress::-webkit-progress-bar {
     -moz-box-pack: justify;
     -webkit-flex-pack: justify;
     padding: 1.25em 2.5em;
-    border-bottom: 1px solid #e5eaeb;
-    margin-bottom: 4em; }
+    margin-bottom: 4em;
+    background: #6bb4d5; }
     .main_content_m .main_content_header_m .hamburger, .main_content_m .main_content_header_m .twitter {
       padding-top: 1.1em; }
   .main_content_m .post_m {
-    color: #707e8c; }
+    color: #282828; }
     .main_content_m .post_m a {
-      color: #369bca;
+      color: #6bb4d5;
       text-decoration: underline; }
     .main_content_m .post_m .post_wrapper_m {
       width: 50%;
@@ -295,7 +489,7 @@ progress::-webkit-progress-bar {
           bottom: 0;
           width: 100%;
           height: 2px;
-          background: #369bca;
+          background: #6bb4d5;
           -webkit-transform: translateX(-100%);
           -moz-transform: translateX(-100%);
           -o-transform: translateX(-100%);
@@ -345,7 +539,7 @@ progress::-webkit-progress-bar {
         font-size: 1.25em;
         transition: color ease 0.3s; }
         .main_content_m .author_share_m .share_m .share_button_m:hover {
-          color: #505d6d; }
+          color: #282828; }
   .main_content_m .comments_m .comment_button_m {
     margin: 0 auto 2em auto;
     max-width: 15em;
@@ -362,7 +556,7 @@ progress::-webkit-progress-bar {
     font-weight: 300;
     margin: 0; }
     .main_content_m .comments_m p:hover {
-      background: #505d6d; }
+      background: #282828; }
   .main_content_m .comments_m a {
     text-decoration: none; }
   .main_content_m .comments_m .post_wrapper_m {
@@ -378,9 +572,9 @@ progress::-webkit-progress-bar {
     .main_content_m .post_bottom_navigation_m .read_next_m {
       font-size: 0.85em;
       margin-top: 0;
-      color: #505d6d; }
+      color: #282828; }
     .main_content_m .post_bottom_navigation_m .next_post_title_m {
-      color: #505d6d;
+      color: #282828;
       text-decoration: none;
       font-size: 1.75em;
       font-weight: bold;
@@ -426,7 +620,7 @@ progress::-webkit-progress-bar {
   position: absolute;
   text-decoration: none;
   text-transform: uppercase;
-  color: #505d6d;
+  color: #282828;
   font-weight: 700;
   letter-spacing: -1px;
   transition: border ease 0.3s;
