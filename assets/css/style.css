@@ -736,3 +736,10 @@ pre .xml .vbscript,
 pre .xml .css,
 pre .xml .cdata {
   opacity: 0.5; }
+
+@media only screen and (max-width: 1000px) {
+  .main_content_m .post_m .index_post_wrapper_m, .main_content_m .post_m .post_wrapper_m {
+    width: 75%; } }
+@media only screen and (max-width: 768px) {
+  .main_content_m .post_m .index_post_wrapper_m, .main_content_m .post_m .post_wrapper_m {
+    width: 90%; } }
