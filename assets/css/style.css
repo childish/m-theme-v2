@@ -743,3 +743,6 @@ pre .xml .cdata {
 @media only screen and (max-width: 768px) {
   .main_content_m .post_m .index_post_wrapper_m, .main_content_m .post_m .post_wrapper_m {
     width: 90%; } }
+@media only screen and (max-width: 480px) {
+  .main_content_m .main_content_header_m {
+    padding: 1.25em 1em; } }
