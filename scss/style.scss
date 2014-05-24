@@ -171,6 +171,17 @@ code {
   border-radius: .25em;
 }
 
+.blue {
+  color: $blue;
+  font-weight: 700;
+}
+
+.note {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: $blue;
+}
+
 //\/\/\/\/\/\\ ----------- Animations ----------- //\/\/\/\/\/\\
 
 .link_ring a::before,

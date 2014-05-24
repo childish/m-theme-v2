@@ -370,6 +370,15 @@ code {
   color: #E0E2E4;
   border-radius: .25em; }
 
+.blue {
+  color: #6bb4d5;
+  font-weight: 700; }
+
+.note {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #6bb4d5; }
+
 .link_ring a::before,
 .link_ring a::after {
   position: absolute;
